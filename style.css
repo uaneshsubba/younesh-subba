@@ -1,10 +1,11 @@
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f4f8;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
 }
 
@@ -15,6 +16,7 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   text-align: center;
   width: 300px;
+  max-width: calc(100% - 60px);
 }
 
 .avatar {
@@ -57,20 +59,65 @@ h2 {
   color: #334155;
   margin: 8px 0;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .card-wrapper {
   width: 100%;
-  max-width: 900px; /* Adjust if needed so two cards fit */
+  max-width: 900px;
   display: flex;
   gap: 20px;
 }
-/* Step 3: Prevent image overflow */
+
 img {
-  /* width: 1000px; */
   max-width: 100%;
   height: auto;
+}
+
+/* Week 11: Dark Mode Toggle Button */
+
+#theme-toggle {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+#theme-toggle:hover {
+  background: #1d4ed8;
+}
+
+/* Week 11: Dark Mode */
+
+body.dark-mode {
+  background-color: #0f172a;
+}
+
+body.dark-mode .card {
+  background-color: #1e293b;
+}
+
+body.dark-mode h2 {
+  color: white;
+}
+
+body.dark-mode .school {
+  color: #cbd5e1;
+}
+
+body.dark-mode .info p {
+  background-color: #334155;
+  color: white;
+}
+
+body.dark-mode .title {
+  color: #60a5fa;
 }
