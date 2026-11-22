@@ -47,3 +47,53 @@ if (themeButton) {
         document.body.classList.toggle("dark-mode");
     });
 }
+// ==========================================
+// STEP 1: Hobby/Skill List Rendering
+// ==========================================
+const hobbies = [
+  'Computer Engineering & Coding',
+  'Table Tennis',
+  'Pocket Ball (Billiards)',
+  'Traveling',
+  'Photography'
+];
+
+const listContainer = document.getElementById('hobby-list');
+
+if (listContainer) {
+  const ul = document.createElement('ul');
+
+  for (let i = 0; i < hobbies.length; i++) {
+    const li = document.createElement('li');
+    li.textContent = hobbies[i];
+    ul.appendChild(li);
+  }
+
+  listContainer.appendChild(ul);
+}
+
+// ==========================================
+// STEP 2: Hobby Gallery (Extension)
+// ==========================================
+const galleryImages = [
+  'https://picsum.photos/id/1/400/300',
+  'https://picsum.photos/id/20/400/300',
+  'https://picsum.photos/id/48/400/300',
+  'https://picsum.photos/id/180/400/300'
+];
+
+let currentIndex = 0;
+const galleryImgElement = document.getElementById('gallery-image');
+const nextPhotoBtn = document.getElementById('next-photo-btn');
+
+if (galleryImgElement && nextPhotoBtn) {
+  nextPhotoBtn.addEventListener('click', function () {
+    currentIndex++;
+
+    if (currentIndex >= galleryImages.length) {
+      currentIndex = 0;
+    }
+
+    galleryImgElement.src = galleryImages[currentIndex];
+  });
+}
